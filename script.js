@@ -1,32 +1,28 @@
 fetch('https://api.github.com/users/tsidenova')
 	.then(res => res.json())
 	.then(json => {
+		let linkProfile = document.getElementById('linkprofile');
+		console.log(linkprofile);
 		let name = json.name;
-		let myName = document.createElement('h2');
-		myName.className = 'text_name';
-		
 		let page = json.html_url;
-		/*let myPage = document.createElement('a');
-		myPage.className = 'link_profile';
-		myPage.href = page;*/
+		let myName = document.createElement('a');
+		myName.className = 'text_name';
+		myName.href = page;
+		myName.innerHTML = name;
+		linkProfile.append(myName);
 		
-		myName.innerHTML = page;
-		document.body.appendChild(myName);
-		
-
-		let avatar = json.avatar_url;
-		let myAvatar = document.createElement('a');
-		myAvatar.className = 'link_avatar';
-		myAvatar.href = avatar;
-		myAvatar.innerHTML = avatar;
-		document.body.appendChild(myAvatar);
-
-
-		
-
+		let bio = document.getElementById('bio');
 		let info = json.bio;
 		let myInfo = document.createElement('p');
 		myInfo.className = 'text_bio';
 		myInfo.innerHTML = info;
-		document.body.appendChild(myInfo);
+		bio.append(myInfo);
+
+		let photo = document.getElementById('photo');
+		let avatar = json.avatar_url;
+		let myAvatar = document.createElement('img');
+		myAvatar.className = 'link_avatar';
+		myAvatar.src = avatar;
+		photo.append(myAvatar);
 	});
+	.catch(err => alert("Информация о пользователе не доступна");

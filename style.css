@@ -1,8 +1,18 @@
-.text_name {
+#linkprofile {
 	text-align: center;
-	cursor: pointer;
 }
 
-.link_avatar {
+.text_name {
+	cursor: pointer;
+	font-size: 18px;
+	text-decoration: none;
+	color: black;
+}
 
+.photo_avatar {
+	text-align: center;
+}
+
+.text_bio {
+	text-align: center;
 }
