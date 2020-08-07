@@ -24,5 +24,5 @@ fetch('https://api.github.com/users/tsidenova')
 		myAvatar.className = 'link_avatar';
 		myAvatar.src = avatar;
 		photo.append(myAvatar);
-	});
-	.catch(err => alert("Информация о пользователе не доступна");
+	})
+	.catch(err => alert("Информация о пользователе не доступна"));
